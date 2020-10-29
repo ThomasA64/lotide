@@ -9,17 +9,25 @@ const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
-  let areEqual = true;
+  let arrayEqual = true;
   for (let i = 0; i < arrayOne.length; i++) {
     if (arrayOne[i] !== arrayTwo[i]) {
-      areEqual = false;
+      arrayEqual = false;
     }
   }
-  return areEqual;
+  return arrayEqual;
 };
 
-console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true
-console.log(eqArrays([1, 2, 3], [3, 2, 1])) // => false
+const assertEqualArrays = function(arrayOne, arrayTwo) {
+  if (eqArrays(arrayOne, arrayTwo)) {
+    return (`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo} in data types and length\n`);
+  } else {
+    return (`🛑🛑🛑 Assertion Failed: ${arrayOne} !== ${arrayTwo} in data types or length\n`);
+  }
+};
 
-console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])) // => true
-console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])) // => false
+console.log(assertEqualArrays([1, 2, 3], [1, 2, 3])) // => true
+console.log(assertEqualArrays([1, 2, 3], [3, 2, 1])) // => false
+
+console.log(assertEqualArrays(["1", "2", "3"], ["1", "2", "3"])) // => true
+console.log(assertEqualArrays(["1", "2", "3"], ["1", "2", 3])) // => false
