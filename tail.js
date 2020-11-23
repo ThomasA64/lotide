@@ -1,14 +1,31 @@
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+    return `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+    return `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
   }
 };
 
-function tail() {
-  return tail([])
-}
+//I will use the slice function to implement this tail since I can remove the head of the array and return the array. 
+
+const tail = function(arr) {
+
+  newArrTail = arr.slice(1);
+  return newArrTail;
+};
+
+
 const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+const OneElement = ['one'];
+const EmptyElement = [];
+console.log(words.length);
+console.log(words);
+console.log(tail(words));
+console.log(words);
+// no need to capture the return value since we are not checking it
+console.log(assertEqual(3, 3)); 
+// original array should still have 3 elements!
+console.log(tail(OneElement)); 
+// An array with only one element should yield an empty array for its tail
+console.log(tail(EmptyElement));
+// An empty array should yield an empty array for its tail
