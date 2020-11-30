@@ -1,24 +1,21 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-  return `✅✅✅ Assertion Passed: ${actual} === ${expected}`
-  }
-  return `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`
+
+//* REQUIRE ASSERT EQUAL INSTEAD OF WRITING IT OUT
+
+const assertEqual = require('./assertEqual');
+
+// const assertEqual = function (actual, expected) {
+//   if (actual === expected) {
+//     return `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+//   } else {
+//     return `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+//   }
+// };
+
+var head = function (array, n) {
+  if (array == null) return void 0;
+  if (n == null) return array[0];
+  if (n < 0) return [];
+  return array.slice(0, n);
 };
 
-var head =  function(array, n) {
-  if (array == null) 
-  return void 0;
-if (n == null) 
-  return array[0];
-if (n < 0)
-  return [];
-return array.slice(0, n);
-};
-
-console.log(head([7, 9, 0, -2]));
-console.log(head([],3));
-console.log(head([7, 9, 0, -2],3));
-console.log(head([7, 9, 0, -2],6));
-console.log(head([7, 9, 0, -2],-3));
-console.log(assertEqual(head([5,6,7]), 5));
-console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
+module.exports = head;

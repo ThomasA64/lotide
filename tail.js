@@ -1,14 +1,11 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
+
+//I will use the slice function to implement this tail since I can remove the head of the array and return the array. 
+
+const tail = function(arr) {
+
+  newArrTail = arr.slice(1);
+  return newArrTail;
 };
 
-function tail() {
-  return tail([])
-}
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+module.exports = tail; 
+
