@@ -1,6 +1,6 @@
 //* REQUIRE ASSERTEQUAL.JS and TAIL.JS: 
 
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
 
@@ -14,7 +14,7 @@ console.log(words);
 console.log(tail(words));
 console.log(words);
 // no need to capture the return value since we are not checking it
-console.log(assertEqual(3, 3)); 
+console.log(assert(3, 3)); 
 // original array should still have 3 elements!
 console.log(tail(OneElement)); 
 // An array with only one element should yield an empty array for its tail
