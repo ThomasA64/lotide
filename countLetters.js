@@ -33,3 +33,5 @@ const countLetters = function (sentence) {
 };
 
 console.log(countLetters("L H L H"));
+
+module.exports = countLetters

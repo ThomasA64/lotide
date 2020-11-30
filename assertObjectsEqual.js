@@ -1,3 +1,5 @@
+const assertEqualArrays = require("./assertArraysEqual");
+
 const eqObjects = function (object1, object2) {
   let Obj1Key1 = Object.keys(object1);
   let Obj2Key2 = Object.keys(object2);
@@ -20,3 +22,6 @@ const assertObjectsEqual = function (actual, expected) {
     return `🛑🛑🛑 Assertion Failed: ${Object1} !== ${Object2} in data types or length\n`;
   }
 };
+
+
+module.exports = assertObjectsEqual

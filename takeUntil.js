@@ -20,6 +20,8 @@ const takeUntil = function (array, callback) {
   console.log(results2);
 };
 
+module.exports = takeUntil
+
 //* Expected Output:
 // [ 1, 2, 5, 7, 2 ]
 // ---

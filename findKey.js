@@ -6,10 +6,11 @@ const galaxies = {
   Ora: { stars: 2 },
   Akelarre: { stars: 3 },
 },
-dKey = galaxies.find((stars) => {
+
+const findKey = galaxies.find((stars) => {
   return galaxies.stars()
 }
   
 ); // => "noma"
-const fin
 
+module.exports = findKey
